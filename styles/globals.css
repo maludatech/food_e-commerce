@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dropdown {
+    @apply absolute right-0 top-full mt-3 w-fit p-5 rounded-lg min-w-[180px] flex flex-col gap-2 justify-center items-end
+    bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur;
+  }
+
+  .main {
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    /* display: flex;
+    justify-content: center;
+    padding: 120px 24px 160px 24px; */
+    pointer-events: none;
+  }
+  
+  .main:after {
+    content: "";
+    background-image: url("/assets/images/grid.svg");
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.4;
+    filter: invert(1);
+  }
+  
+  .gradient {
+    height: fit-content;
+    z-index: 3;
+    width: 100%;
+    max-width: 640px;
+    background-image: radial-gradient(
+        at 27% 37%,
+        hsla(215, 98%, 61%, 1) 0px,
+        transparent 0%
+      ),
+      radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+      radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+      radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    filter: blur(100px) saturate(150%);
+    top: 80px;
+    opacity: 0.15;
+  }
+  
+  @media screen and (max-width: 640px) {
+    .main {
+      padding: 0;
+    }
+  }
+  
+  /* text gradient */
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 100%;
+    animation: gradient 10s ease infinite;
+  }
+  .glassmorphism {
+    @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  }
